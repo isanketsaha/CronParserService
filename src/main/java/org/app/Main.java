@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static org.app.common.Constants.SPACES;
 import static org.app.common.Utils.getField;
 
 
@@ -24,14 +25,17 @@ public class Main {
      * @param input - provided cron expression.
      */
     public static void process(String input) {
-        String[] instructions = input.split(" ");
-        preprocess(instructions);
-        List<String> result = IntStream.range(0, instructions.length)
-                .mapToObj(i -> parserService.parse(instructions[i], i))
-                .collect(Collectors.toList());
-
-        IntStream.range(0, result.size())
-                .forEach(index -> print(index, result.get(index)));
+        try {
+            String[] instructions = input.split(SPACES);
+            preprocess(instructions);
+            List<String> result = IntStream.range(0, instructions.length)
+                    .mapToObj(i -> parserService.parse(instructions[i], i))
+                    .collect(Collectors.toList());
+            IntStream.range(0, result.size())
+                    .forEach(index -> print(index, result.get(index)));
+        } catch (Exception e) {
+            System.out.println("Error While processing expression, chances of invalid input");
+        }
 
     }
 
