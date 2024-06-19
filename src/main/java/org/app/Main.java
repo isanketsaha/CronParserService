@@ -45,7 +45,7 @@ public class Main {
      * @param instructions - tokenized array.
      */
     private static void preprocess(String[] instructions) {
-        if (instructions.length != 5) {
+        if (instructions.length != 6) {
             throw new IllegalArgumentException("Invalid Expression");
         }
     }
