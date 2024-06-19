@@ -1,8 +1,10 @@
 # CronParserService
+CronParserService is a simple Java application that parses the input expression in token and then process the token in order to evaluate the range and prints accordingly. 
+This guide will help you set up and run the service locally.
 
-**Description**:
-`CronParserService is a simple Java application that parses the input expression in token and then process the token in order to evaluate the range and prints accordingly. 
-This guide will help you set up and run the service locally.`
+### Supported Expression
+`*` `/` `,` `+` `digits only`
+    
 
 ## Prerequisites
 
@@ -15,8 +17,8 @@ This guide will help you set up and run the service locally.`
 
 First, clone the repository to your local machine:
 
-```
-git clone https://github.com/yourusername/CronParserService.git
+```sh
+git clone https://github.com/isanketsaha/CronParserService.git
 cd CronParserService
 ```
 
